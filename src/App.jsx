@@ -1,13 +1,12 @@
-import { useState } from "react";
-// import CharacterCounter from "./components/CharacterCounter/CharacterCounter";
-import Toggler from "./components/Toggler";
+import './App.css'
+import CharacterCounter from './components/CharacterCounter';
 
 function App() {
   return (
     <div>
+  <CharacterCounter />
   
       
-      <Toggler />
     </div>
   );
 }
