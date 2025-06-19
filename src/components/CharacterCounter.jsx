@@ -31,15 +31,28 @@ const handleTextChange= (newText) => {
     // calculate character count (excluding spaces)
     const characterCount = inputText.replace(/\s/g, "").length;
 
-    
+    // calculate reading time (assuming 200 words per minute)//
+    // 2 decimal places//
+    const readingTime = (wordCount / 200).toFixed(2); 
 
+    return { wordCount, characterCount, readingTime };
+  };
+
+  // Progress indicator: check if word count is within min/max//
+  const isWithinGoal = stats.wordCount >= minWords && stats.wordCount <= maxWords;
   return (
-    <div>
+    <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
     <h1>CharacterCounter</h1>
-    <TextInput placeholder="Start typing your thoughts here" onTextChange={handleTextChange}/>
+    <TextInput 
+    placeholder="Start typing your thoughts here" 
+    onTextChange={handleTextChange}
+    />
     <StatsDisplay stats={stats} />
+    <p style={{ color: isWithinGoal ? "green" : "red" }}>
+      Word count goal: {minWords} to {maxWords} words
+      {isWithinGoal ? " (Goal met)" : " (Goal not met)"}
+    </p>   
     </div>
-
    );
   }
   export default CharacterCounter;
