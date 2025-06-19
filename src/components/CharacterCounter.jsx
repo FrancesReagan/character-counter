@@ -15,7 +15,6 @@ function CharacterCounter({minWords = 25, maxWords = 100, targetReadingTime =1})
 // the text state is used to calculate stats(word count, character count, reading time( and pass them to StatsDisplay.))
 const handleTextChange= (newText) => {
   setText(newText);
-  console.log("Your New State is", text);
 };
   
   const calculateStats = (inputText) => {
@@ -25,7 +24,7 @@ const handleTextChange= (newText) => {
     }
 
     // Calculate word count//
-    const wordsArray = inputText.trim().split(/\s+).filter((word) => word.length > 0);
+    const wordsArray = inputText.trim().split(/\s+/).filter((word) => word.length > 0);
     const wordCount = wordsArray.length;
 
     // calculate character count (excluding spaces)
@@ -39,20 +38,22 @@ const handleTextChange= (newText) => {
   };
 
   // Progress indicator: check if word count is within min/max//
-  const isWithinGoal = stats.wordCount >= minWords && stats.wordCount <= maxWords;
-  return (
-    <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
-    <h1>CharacterCounter</h1>
-    <TextInput 
-    placeholder="Start typing your thoughts here" 
-    onTextChange={handleTextChange}
-    />
+const stats = calculateStats(text);
+const isWithinGoal = stats.wordCount >= minWords && stats.wordCount <= maxWords;
+
+return (
+  <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
+     <h1>CharacterCounter</h1>
+     <TextInput 
+     placeholder="Start typing your thoughts here" 
+     onTextChange={handleTextChange}
+     />
     <StatsDisplay stats={stats} />
-    <p style={{ color: isWithinGoal ? "green" : "red" }}>
+     <p style={{ color: isWithinGoal ? "green" : "red" }}>
       Word count goal: {minWords} to {maxWords} words
       {isWithinGoal ? " (Goal met)" : " (Goal not met)"}
     </p>   
-    </div>
+  </div>
    );
   }
   export default CharacterCounter;

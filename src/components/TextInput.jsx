@@ -1,26 +1,24 @@
 // text input is a box where users type their article//
 // this is another child of CharacterCounter//
-function TextInput({onTextChange, placeholder}) {
+function TextInput({ onTextChange, placeholder }) {
 const handleChange = (e) => {
-  console.log(e.target.value);
   onTextChange(e.target.value);
 };
 
-  return(
-    <div>
-    <h1>TextInput</h1>
-    <textarea 
+return(
+ <div>
+  <textarea 
     onChange={handleChange} 
     placeholder={placeholder}
     style={{
-    width: "100%"
-    padding:"10px",
+    width: "100%",
+    padding: "10px",
     border: "1px solid #ccc",
     borderRadius: "5px",
     minHeight: "100px",
     }}
     />
-</div>
+  </div>
   );
 }
 export default TextInput

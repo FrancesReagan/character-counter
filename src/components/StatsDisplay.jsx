@@ -2,7 +2,6 @@
 // this is one child of Character Counter//
 
 function StatsDisplay({ stats }){
-  console.log(stats.wordCount);
 
   return (
     <div style={{ margin: "20 px 0", padding: "10px", backgroundColor: "#f9f9f9" }}>

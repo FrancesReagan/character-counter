@@ -4,15 +4,13 @@
 // CharacterCounter and passes some configuration props (minWords, maxWords, targetReadingTime). App is like a simplewrapper that sets up the app but doesn't manage any
 // dynamic data//
 import './App.css'
-import CharacterCounter from './components/CharacterCounter';
-import Toggler from './components/Toggler';
+import CharacterCounter from './CharacterCounter';
+import Toggler from './Toggler';
 
 function App() {
   return (
     <div style={{ fontFamily: "Arial, sans-serif" }}>
-  <CharacterCounter minWords={25} maxWords={100} targetReadingTime={1}/>
-    </div>
-    <div>
+     <CharacterCounter minWords={25} maxWords={100} targetReadingTime={1}/>
       <Toggler />
     </div>
   );
