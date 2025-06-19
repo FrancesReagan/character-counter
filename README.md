@@ -10,11 +10,11 @@ How to use to use this character-counter:
 *Clone or download the project files
 
 *create New Vite App with React and Tailwind
-  npm create vite@latest
-    pick React/React-SWC
-    cd character-counter
-  npm install or npm i
-  npm install tailwindcss @tailwind/vite --this installs tailwind CSS
+  - npm create vite@latest
+  - pick React/React-SWC
+  - cd character-counter
+  - npm install or npm i
+  - npm install tailwindcss @tailwind/vite --this installs tailwind CSS
   
 *Configure the Vite plugin: vite.config.ts file 
   add to the top of the vite.config.ts file:
