@@ -42,14 +42,32 @@ const stats = calculateStats(text);
 const isWithinGoal = stats.wordCount >= minWords && stats.wordCount <= maxWords;
 
 return (
-  <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
-     <h1>CharacterCounter</h1>
+  <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-md">
+     <h1 className="text-2xl font-bold text-gray-800 mb-5 text-center">
+      CharacterCounter
+      </h1>
+      <button
+      onClick={() => setShowStats(!showStats)}
+      className={`px-4 py-2 rounded-md text-white mb-4 ${
+        showStats ? "bg-red-500" : "bg-blue-500"
+      } hover:opacity-90`}
+      >
+       
+      {showStats ? "Hide Stats" : "Show Stats"}   
+      </button>
      <TextInput 
      placeholder="Start typing your thoughts here" 
      onTextChange={handleTextChange}
      />
-    <StatsDisplay stats={stats} />
-     <p style={{ color: isWithinGoal ? "green" : "red" }}>
+    {showStats && tats.wordCount === 0 && stats.characterCount === 0 ? (
+      <p className="text-gray-600 text-center my-4">Type something to see stats</p>
+      ) : (
+      showStats && <StatsDisplay stats={stats} />
+  )}
+     <p className={`font-bold text-center mt-4 ${
+      isWithinGoal ? "text-green-500" : "text-red-500"
+     }`}
+    >
       Word count goal: {minWords} to {maxWords} words
       {isWithinGoal ? " (Goal met)" : " (Goal not met)"}
     </p>   
