@@ -4,7 +4,44 @@
 ***To see character counter works in action click link below or find the "how character counter works.mp4 file in the character-counter repo"***
 https://github.com/FrancesReagan/character-counter/blob/main/how%20character%20counter%20works.mp4
 
+How to use to use this character-counter:
+TO INSTALL:
+*Clone or download the project files
+*create New Vite App with React and Tailwind
+  npm create vite@latest
+    pick React/React-SWC
+    cd character-counter
+  npm install or npm i
+  npm install tailwindcss @tailwind/vite --this installs tailwind CSS
+*Configure the Vite plugin: vite.config.ts file 
+  add to the top of the vite.config.ts file:
+     import tailwindcss from 'tailwindcss/vite';
+  update the plugins section:
+    plugins: [react(), tailwindcss()]
+*Add an @import to the top of your CSS file (src/index.css) that imports tailwind ccs:
+    @import "tailwindcss";
+*add to the App.css file (src/App.css):
+    @layer base {  h1 { font-size: var(--text-2xl);  }  h2 { font-size: var(--text-xl);  }  h3 { font-size: var(--text-lg);        }  a { color: var(--color-blue-600); text-decoration-line: underline;  }}
 
+RUN: 
+  npm run dev
+
+MONITOR:
+*ctrl and click on the local host link:
+  VITE v6.3.5  ready in 669 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
+*Right click on browser screen
+*Click Inspect
+*Click Console to see any details, errors, etc. help in your development process as you implement and or change the 
+  code to suit your needs.
+
+  
+  
+  
 
 
 Reflection:
