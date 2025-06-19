@@ -5,7 +5,7 @@
 https://github.com/FrancesReagan/character-counter/blob/main/how%20character%20counter%20works.mp4
 
 How to use to use this character-counter:
-__TO INSTALL:__
+****__TO INSTALL:__****
 *Clone or download the project files
 *create New Vite App with React and Tailwind
   npm create vite@latest
