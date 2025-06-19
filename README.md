@@ -2,26 +2,31 @@
 <img width="232" alt="image" src="https://github.com/user-attachments/assets/4c6120cd-f370-4324-8084-9db1d4a1360c" />
 
 ***To see character counter works in action click link below or find the "how character counter works.mp4 file in the character-counter repo"***
-https://github.com/FrancesReagan/character-counter/blob/main/how%20character%20counter%20works.mp4
+[Character Counter in Action](https://github.com/FrancesReagan/character-counter/blob/main/how%20character%20counter%20works.mp4)
 
 How to use to use this character-counter:
 ****__TO INSTALL:__****
+
 *Clone or download the project files
+
 *create New Vite App with React and Tailwind
   npm create vite@latest
     pick React/React-SWC
     cd character-counter
   npm install or npm i
   npm install tailwindcss @tailwind/vite --this installs tailwind CSS
+  
 *Configure the Vite plugin: vite.config.ts file 
   add to the top of the vite.config.ts file:
      import tailwindcss from 'tailwindcss/vite';
   update the plugins section:
     plugins: [react(), tailwindcss()]
+    
 *Add an @import to the top of your CSS file (src/index.css) that imports tailwind ccs:
     @import "tailwindcss";
+    
 *add to the App.css file (src/App.css):
-    @layer base {  h1 { font-size: var(--text-2xl);  }  h2 { font-size: var(--text-xl);  }  h3 { font-size: var(--text-lg);        }  a { color: var(--color-blue-600); text-decoration-line: underline;  }}
+    @layer base {  h1 { font-size: var(--text-2xl);  }  h2 { font-size: var(--text-xl);  }  h3 { font-size: var(--text-lg);}  a { color: var(--color-blue-600); text-decoration-line: underline;  }}
 
 RUN: 
   npm run dev
