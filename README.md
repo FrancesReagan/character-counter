@@ -1,4 +1,5 @@
-<img width="326" alt="image" src="https://github.com/user-attachments/assets/cd02018d-e1b1-4e58-8497-b412e6ddad50" />
+<img width="282" alt="image" src="https://github.com/user-attachments/assets/eee6a452-968c-4cc5-ac73-a3ce20d55477" />
+
 
 Reflection:
 *How did you handle state updates when the text changed?
