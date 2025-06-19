@@ -10,6 +10,8 @@ import TextInput from "./TextInput";
 function CharacterCounter({minWords = 25, maxWords = 100, targetReadingTime =1}){
   // useState is here---this below creates the text state in CharacterCounter component--this is where the user's typed text is stored//
   const [text, setText] = useState(""); 
+  // added state for toggling//
+  const [showStats, setShowStats] = useState(true); 
 
 // this function updates the text state using setText whenever the user types something in TextInput.//
 // the text state is used to calculate stats(word count, character count, reading time( and pass them to StatsDisplay.))
@@ -43,12 +45,12 @@ const isWithinGoal = stats.wordCount >= minWords && stats.wordCount <= maxWords;
 
 return (
   <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-md">
-     <h1 className="text-2xl font-bold text-gray-800 mb-5 text-center">
+     <h1 className="text-2xl font-bold text-black-900 mb-5 text-center">
       CharacterCounter
       </h1>
       <button
       onClick={() => setShowStats(!showStats)}
-      className={`px-4 py-2 rounded-md text-white mb-4 ${
+      className={`px-4 py-2 rounded-md text-black mb-4 ${
         showStats ? "bg-red-500" : "bg-blue-500"
       } hover:opacity-90`}
       >
@@ -59,7 +61,7 @@ return (
      placeholder="Start typing your thoughts here" 
      onTextChange={handleTextChange}
      />
-    {showStats && tats.wordCount === 0 && stats.characterCount === 0 ? (
+    {showStats && stats.wordCount === 0 && stats.characterCount === 0 ? (
       <p className="text-gray-600 text-center my-4">Type something to see stats</p>
       ) : (
       showStats && <StatsDisplay stats={stats} />
