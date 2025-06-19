@@ -3,7 +3,7 @@
 // this is the parent of statsdisplay and textinput//
 // CharacterCounter is the main actor who does all the work--it keeps track of the user's text, calculates statistics, and tells the other components (TextInput and StatsDisplay)
 // what to do. the state lives in CharacterCounter because its the central hub that needs to know the text to calculate stats and pass them to StatsDisplay, etc.//
-
+import { useState } from "react";
 import StatsDisplay from "./StatsDisplay";
 import TextInput from "./TextInput";
 
@@ -16,11 +16,22 @@ function CharacterCounter({minWords = 25, maxWords = 100, targetReadingTime =1})
 const handleTextChange= (newText) => {
   setText(newText);
   console.log("Your New State is", text);
-}
+};
   
-  const stats = calculateStats(text);
-  console.log(stats);
-  // calculateStats(inputText).forEach((word))
+  const calculateStats = (inputText) => {
+    // handle empty input//
+    if(!inputText.trim()) {
+      return { wordCount: 0, characterCount: 0, readingTime: 0 };
+    }
+
+    // Calculate word count//
+    const wordsArray = inputText.trim().split(/\s+).filter((word) => word.length > 0);
+    const wordCount = wordsArray.length;
+
+    // calculate character count (excluding spaces)
+    const characterCount = inputText.replace(/\s/g, "").length;
+
+    
 
   return (
     <div>
