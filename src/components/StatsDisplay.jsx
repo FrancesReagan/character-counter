@@ -1,6 +1,6 @@
 //StatsDisplay is a scoreboard that shows stats of word counting//
 // this is one child of Character Counter//
-import { useState } from "react";
+
 function StatsDisplay({ stats }) {
 
   return (
@@ -10,13 +10,14 @@ function StatsDisplay({ stats }) {
     <p className="text-gray-700">
       <span className="font-medium">Word Count: </span>
       <span className="ml-2 text-blue-600 font-semibold">{stats.wordCount}</span>
+      </p>
     <p className="text-gray-700">
       <span className="font-medium">Character Count: </span>
       <span className="ml-2 text-blue-600 font-semibold">{stats.characterCount}</span>
       </p> 
       <p className="text-gray-700">
         <span className="font-medium">Reading Time:</span>
-        <span className="ml-2 text-blue-600 font-semibold">{stats.readingTime} mintues</span>
+        <span className="ml-2 text-blue-600 font-semibold">{stats.readingTime} minutes</span>
       </p>        
       </div>
       </div>

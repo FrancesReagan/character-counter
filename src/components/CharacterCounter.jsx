@@ -45,7 +45,7 @@ const isWithinGoal = stats.wordCount >= minWords && stats.wordCount <= maxWords;
 
 return (
   <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-md">
-     <h1 className="text-2xl font-bold text-black-900 mb-5 text-center">
+     <h1 className="text-2xl font-bold text-gray-900 mb-5 text-center">
       CharacterCounter
       </h1>
       <button
@@ -69,7 +69,7 @@ return (
       ) : (
       showStats && <StatsDisplay stats={stats} />
   )}
-     <p className={`p-4 rounded-lg border-2 text-center font-semibold ${
+     <div className={`p-4 rounded-lg border-2 text-center font-semibold ${
       isWithinGoal
        ? "bg-green-50 border-green-300 text-green-700"
        : "bg-red-50 border-red-300 text-red-700"
@@ -84,6 +84,7 @@ return (
       <p className="text-sm mt-2 opacity-75">
         Current: {stats.wordCount} words
       </p>
+  </div>
   </div>
    );
   }
