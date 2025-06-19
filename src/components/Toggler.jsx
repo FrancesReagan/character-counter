@@ -25,7 +25,7 @@ function Toggler({}) {
     </p>
     {isOn && (
     <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
-      <p className="text-blue-800 font-medium"> Secret Message Revealed</p>
+      <p className="text-blue-800 font-medium"> Secret Message Revealed: Love rides on the Wind....let go...</p>
     </div>
       )}
     </div>
