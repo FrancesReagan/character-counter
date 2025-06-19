@@ -1,5 +1,6 @@
 <img width="282" alt="image" src="https://github.com/user-attachments/assets/eee6a452-968c-4cc5-ac73-a3ce20d55477" />
 <img width="232" alt="image" src="https://github.com/user-attachments/assets/4c6120cd-f370-4324-8084-9db1d4a1360c" />
+***See mp4 in character-counter repo to see how it works in action****
 
 
 
