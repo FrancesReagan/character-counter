@@ -1,3 +1,6 @@
+//StatsDisplay is a scoreboard that shows stats of word counting//
+// this is one child or Character Counter//
+
 function StatsDisplay({stats}){
   console.log(stats.wordCount);
 
