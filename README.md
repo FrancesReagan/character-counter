@@ -50,16 +50,21 @@ MONITOR:
 
 
 Reflection:
+
 *How did you handle state updates when the text changed?
+
 I used the useState hook:
+
 const [text, setText] = useState("");
 const handleTextChange = (newText);
 };
+
 I passed the "handleTextChange" function down to the "TextInput" component as a prop ("onTextChange"), which calls it 
 whenever the textarea value changes. The state lives in the parent component ("CharacterCounter") where it is needed for 
 calculations, as the child component ("TextInput") triggers updates through a callback.
 
 *What considerations did you make when calculating reading time?
+
 const readingTime = (wordCount / 200).toFixed(2);
 
 I decided that a standard reading speed would be about 200 words per minute. I used toFixed(2) to round to two decimal places; I returned "0" in case
@@ -67,11 +72,13 @@ the input was left empty. I was working on allowing reading speed to be configur
 used at a later date--if I have more time.
 
 *How did you ensure the UI remained responsive during rapid text input?
+
 My current code or implemented code calculates the stats on every render--which is good for a smalll to medium amount of text input. 
 I read that if I want to later implement "useMemo" to handle very large texts and or very rapid typing---this would memorize what the stats calculation is
 and using the "debouncing" for the text input.
 
 *What challenges did you face when implementing the statistics calculations?
+
 These are the following changes I faced: empty input handling, word count logic, how to count characters, and dealing with edge cases.
 For empty input handling I used "!inputText.trim()" and if zeros where returned. For word counting logic I found this code "split(/\s+/).filter(word) => word.length > 0"
 to handle many spaces.  I excluded spaces with 'replace(/\s/g, ""'; the filtering used ensured that empty strings don't count as words.
