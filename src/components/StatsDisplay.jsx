@@ -1,17 +1,17 @@
 //StatsDisplay is a scoreboard that shows stats of word counting//
-// this is one child or Character Counter//
+// this is one child of Character Counter//
 
-function StatsDisplay({stats}){
+function StatsDisplay({ stats }){
   console.log(stats.wordCount);
 
   return (
-    <>
-    <h1>Stats Display</h1>
-    <h2>Word Count: {stats.wordCount}</h2>
-    <h2>Character Count: {stats.characterCount}</h2>
-
-    </>
-  )
+    <div style={{ margin: "20 px 0", padding: "10px", backgroundColor: "#f9f9f9" }}>
+    <h1>Statistics</h1>
+    <p>Word Count: {stats.wordCount}</p>
+    <p>Character Count: {stats.characterCount}</p>
+    <p>Reading Time: {stats.readingTime} minutes</p>
+    </div>
+  );
 }
 
 export default StatsDisplay
