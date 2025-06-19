@@ -9,7 +9,7 @@ import Toggler from './components/Toggler';
 
 function App() {
   return (
-    <div style={{ fontFamily: "Arial, sans-serif" }}>
+    <div className="min-h-screen bg-gray-50 py-8 px-4">
      <CharacterCounter minWords={25} maxWords={100} targetReadingTime={1}/>
       <Toggler />
     </div>
