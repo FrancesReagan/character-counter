@@ -50,11 +50,12 @@ return (
       </h1>
       <button
       onClick={() => setShowStats(!showStats)}
-      className={`px-4 py-2 rounded-md text-black mb-4 ${
-        showStats ? "bg-red-500" : "bg-blue-500"
-      } hover:opacity-90`}
+      className={`px-6 py-2 rounded-lg font-medium text-white mb-6 transition-colors ${
+        showStats
+        ? "bg-red-500 hover:bg-red-600"
+        : "bg-blue-500 hover:bg-blue-600"
+      }`}
       >
-       
       {showStats ? "Hide Stats" : "Show Stats"}   
       </button>
      <TextInput 
@@ -62,17 +63,27 @@ return (
      onTextChange={handleTextChange}
      />
     {showStats && stats.wordCount === 0 && stats.characterCount === 0 ? (
-      <p className="text-gray-600 text-center my-4">Type something to see stats</p>
+      <p className="text-gray-500 text-center my-6 italic">
+        Type something to see stats
+        </p>
       ) : (
       showStats && <StatsDisplay stats={stats} />
   )}
-     <p className={`font-bold text-center mt-4 ${
-      isWithinGoal ? "text-green-500" : "text-red-500"
+     <p className={`p-4 rounded-lg border-2 text-center font-semibold ${
+      isWithinGoal
+       ? "bg-green-50 border-green-300 text-green-700"
+       : "bg-red-50 border-red-300 text-red-700"
      }`}
     >
+      <p>
       Word count goal: {minWords} to {maxWords} words
-      {isWithinGoal ? " (Goal met)" : " (Goal not met)"}
     </p>   
+  <p className="mt-1">
+      {isWithinGoal ? "✅Goal met" : " ❌Goal not met"}
+      </p>
+      <p className="text-sm mt-2 opacity-75">
+        Current: {stats.wordCount} words
+      </p>
   </div>
    );
   }
