@@ -110,13 +110,13 @@ __HOW TO CUSTOMIZE:__
       
   __STYLING__
     - can modify existing Tailwind classes 
-    - can add custom CSS in App.css or index.css
+    - can add custom CSS in `App.css` or `index.css`
     - can create different props for different themes
 
  __READING SPEED__
    -currently set to 200 words per minute-
     - to modify: 
-      -open CharacterCounter.jsx
+      -open `CharacterCounter.jsx`
       -find the reading time calculation: const readingTime = (wordCount / 200).toFixed(2);
       -replace 200 with your desired words per min.
 
