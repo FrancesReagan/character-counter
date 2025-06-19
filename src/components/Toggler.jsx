@@ -14,8 +14,8 @@ function Toggler({}) {
         ? "bg-green-500 hover:bg-green-600 text-white"
         : "bg-gray-300 hover:bg-gray-400 text-gray-800"
       }`}
-      
-      >Toggle Status
+      >
+      Toggle Status
       </button>
     <p className="mt text-gray-700">
       <span className="font-medium">Status:</span>
@@ -23,7 +23,7 @@ function Toggler({}) {
         {isOn ? "On" : "Off"}
       </span>
     </p>
-    {isOn &&(
+    {isOn && (
     <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
       <p className="text-blue-800 font-medium"> Secret Message Revealed</p>
     </div>

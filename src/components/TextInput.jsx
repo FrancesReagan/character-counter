@@ -6,18 +6,13 @@ const handleChange = (e) => {
 };
 
 return(
- <div>
+ <div className="mb-4">
   <textarea 
     onChange={handleChange} 
     placeholder={placeholder}
-    style={{
-    width: "100%",
-    padding: "10px",
-    border: "1px solid #ccc",
-    borderRadius: "5px",
-    minHeight: "100px",
-    }}
-    />
+    className="w-full p-3 border border-gray-300 rounded-lg min-h-[120px] resize-y focus:outline-none 
+    focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-800 placeholder-gray-500"
+      />
   </div>
   );
 }
