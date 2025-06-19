@@ -4,7 +4,7 @@
 ***To see character counter works in action click link below or find the "how character counter works.mp4 file in the character-counter repo"***
 [Character Counter in Action](https://github.com/FrancesReagan/character-counter/blob/main/how%20character%20counter%20works.mp4)
 
-##How to use to use this character-counter:
+__How to use to use this character-counter:__
 ****__TO INSTALL:__****
 
 *Clone or download the project files
@@ -49,7 +49,7 @@ MONITOR:
   
 
 
-##__Reflection:__
+__Reflection:__
 
 **How did you handle state updates when the text changed?**
 
