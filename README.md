@@ -4,6 +4,8 @@
 ***To see character counter works in action click link below or find the "how character counter works.mp4 file in the character-counter repo"***
 [Character Counter in Action](https://github.com/FrancesReagan/character-counter/blob/main/how%20character%20counter%20works.mp4)
 
+(note Reflection answers at bottom)
+
 __CHARACTER COUNTER APP__
 _This is a text analysis tool that can give you real-time statistics for the content you write; this includes word count, 
 character count, and estimated reading time. I feel this app is great for writers, bloggers, and or content creators
@@ -71,7 +73,7 @@ __CharacterCounter(main component)__
         - `minWords` (number, default: 25) - min word count goal
         - `maxWords` (number, default: 100) - max word count goal
         - `targetReadingTime` (number, default:1) - target reading time in mins (not yet used)
-        - 
+    
 __TextInput(child component)__
   - This is a textarea component where users input their text.
     -__PROPS__
@@ -92,10 +94,31 @@ __HOW TO USE__
 *Goal indicator shows if you hit your target word count 
 *Use the "HideStats/ShowStats" button to toggle the statistics panel
 
+__HOW TO CUSTOMIZE:__
+  __Goals__
+    -you can customize to fit your word count goals--this is done changing and passing any new minWords and maxWords prop   
+    values you desire to the CharacterCounter component:
+    
+      //for a short blog post//
+      <CharacterCounter minWords={300} maxWords={500} />
 
-  
-  
-  
+      //for a social media post//
+      <CharacterCounter minWords={10} maxWords={50} />
+
+      //for an essay//
+      <CharacterCounter minWords={800} maxWords={1200} />
+      
+  __STYLING__
+    - can modify existing Tailwind classes 
+    - can add custom CSS in App.css or index.css
+    - can create different props for different themes
+
+ __READING SPEED__
+   -currently set to 200 words per minute-
+    - to modify: 
+      -open CharacterCounter.jsx
+      -find the reading time calculation: const readingTime = (wordCount / 200).toFixed(2);
+      -replace 200 with your desired words per min.
 
 
 __Reflection:__
